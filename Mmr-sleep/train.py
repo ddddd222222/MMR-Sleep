@@ -20,7 +20,7 @@ def main_train(config, args):
     # 加载数据集，split_num代表第几次划分数据集，split_num=1代表第一次划分数据集，数据分批导入，减少内存占用
     trian_dataset = sleppEDF(args.np_data_dir, 'train', config.config["data_set"]["sleepedf_split"]
                              )
-    trian_dataset.add_oversampling()
+
     type_n = int(trian_dataset.type_n)
     model = NEWNet(trian_dataset.n_samples, trian_dataset.sfreq,
                    len(trian_dataset.channels), config.config["model"], type_n).to(device)
