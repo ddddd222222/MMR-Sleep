@@ -1,4 +1,3 @@
-# 郑德钦  2024/3/1
 import argparse
 import json
 import time
